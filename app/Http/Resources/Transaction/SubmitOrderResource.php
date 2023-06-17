@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Category;
+namespace App\Http\Resources\Transaction;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class SubmitCategoryResource extends JsonResource
+class SubmitOrderResource extends JsonResource
 {
     private $message;
 
@@ -26,14 +26,12 @@ class SubmitCategoryResource extends JsonResource
     {
         return [
             'data' => [
-                'id' => $this->id,
-                'name' => $this->name,
-                'description' => $this->description,
+                'id' => $this->id
             ],
             'meta' => [
                 'success' => true,
                 'message' => $this->message,
-                'pagination' => (object) [],
+                'pagination' => (object)[],
             ],
         ];
     }

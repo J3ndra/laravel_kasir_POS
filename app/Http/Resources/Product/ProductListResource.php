@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Category;
+namespace App\Http\Resources\Product;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class CategoryListResource extends ResourceCollection
+class ProductListResource extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.
@@ -17,10 +17,10 @@ class CategoryListResource extends ResourceCollection
         return [
             'data' => $this->transformCollection($this->collection),
             'meta' => [
-                'success' => true,
-                'message' => 'Success get category lists',
-                'pagination' => $this->metaData(),
-            ],
+                "success" => true,
+                "message" => "Success get product lists",
+                'pagination' => $this->metaData()
+            ]
         ];
     }
 
@@ -30,6 +30,12 @@ class CategoryListResource extends ResourceCollection
             'id' => $data->id,
             'name' => $data->name,
             'description' => $data->description,
+            'preview_image' => $data->image,
+            'price' => (int)$data->price,
+            'price_formatted' => number_format($data->price, 2, ',', '.'),
+            'stock' => $data->stock,
+            'category_id' => $data->category_id,
+            'category_name' => $data->category->name
         ];
     }
 
@@ -43,13 +49,13 @@ class CategoryListResource extends ResourceCollection
     private function metaData()
     {
         return [
-            'total' => $this->total(),
-            'count' => $this->count(),
-            'per_page' => (int) $this->perPage(),
-            'current_page' => $this->currentPage(),
-            'total_pages' => $this->lastPage(),
-            'links' => [
-                'next' => $this->nextPageUrl(),
+            "total" => $this->total(),
+            "count" => $this->count(),
+            "per_page" => (int)$this->perPage(),
+            "current_page" => $this->currentPage(),
+            "total_pages" => $this->lastPage(),
+            "links" => [
+                "next" => $this->nextPageUrl()
             ],
         ];
     }

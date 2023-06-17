@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Category;
+namespace App\Http\Resources\Product;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class SubmitCategoryResource extends JsonResource
+class SubmitProductResource extends JsonResource
 {
     private $message;
 
@@ -33,7 +33,7 @@ class SubmitCategoryResource extends JsonResource
             'meta' => [
                 'success' => true,
                 'message' => $this->message,
-                'pagination' => (object) [],
+                'pagination' => (object)[],
             ],
         ];
     }

@@ -13,30 +13,30 @@ class GetSidebarMenuAction
                 'icon' => 'VDashboard',
                 'can'  => 'view_general_dashboard'
             ],
-            // [
-            //     'text' => 'Transaction',
-            //     'url'  => route('transaction.index'),
-            //     'icon' => 'VTransaction',
-            //     'can'  => 'view_transaction'
-            // ],
-            // [
-            //     'text' => 'Category',
-            //     'url'  => route('category.index'),
-            //     'icon' => 'VTag',
-            //     'can'  => 'view_category'
-            // ],
-            // [
-            //     'text' => 'Product',
-            //     'url'  => route('product.index'),
-            //     'icon' => 'VProduct',
-            //     'can'  => 'view_product'
-            // ],
-            // [
-            //     'text' => 'Report',
-            //     'url'  => route('report.index'),
-            //     'icon' => 'VBook',
-            //     'can'  => 'view_report'
-            // ],
+            [
+                'text' => 'Transaction',
+                'url'  => route('transaction.index'),
+                'icon' => 'VTransaction',
+                'can'  => 'view_transaction'
+            ],
+            [
+                'text' => 'Category',
+                'url'  => route('category.index'),
+                'icon' => 'VTag',
+                'can'  => 'view_category'
+            ],
+            [
+                'text' => 'Product',
+                'url'  => route('product.index'),
+                'icon' => 'VProduct',
+                'can'  => 'view_product'
+            ],
+            [
+                'text' => 'Report',
+                'url'  => route('report.index'),
+                'icon' => 'VBook',
+                'can'  => 'view_report'
+            ],
             [
                 'text' => 'Settings',
                 'icon' => 'VSetting',
